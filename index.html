@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чатик</title>
+    <link rel="shortcut icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/2652/2652175.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+</head>
+
+<body>
+    <main class="main">
+        <section class="leave_feedback">
+            <h2>Добавить отзыв</h2>
+            <div class="user_info">
+                <label for="input_name">Никнейм</label>
+                <input type="text" id="input_name" placeholder="Введите никнейм" title="Придумайте никнейм"><br><br>
+
+                <label for="input_link">Аватар</label>
+                <input type="url" id="input_link" placeholder="Введите URL картинки"
+                    title="Введите URL картинки"><br><br>
+            </div>
+            <label for="input_feedback">Оставьте отзыв</label>
+            <textarea id="input_feedback" cols="59" rows="7" placeholder="Оставьте свой отзыв"></textarea>
+
+            <button type="submit" id="add_feedback">Оставить отзыв</button>
+        </section>
+
+        <section class="feedbacks">
+            <h2>Отзывы</h2>
+            <div id="output-list">
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>

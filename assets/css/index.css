@@ -1,0 +1,63 @@
+.leave_feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 50px;
+    margin-left: 50px;
+
+    gap: 7px;
+}
+
+.main {
+    display: flex;
+}
+
+/* .user_info {
+    display: flex;
+
+} */
+
+.feedbacks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.output_name {
+    color: rgb(80, 10, 10);
+    font-weight: 700;
+    font-size: larger;
+
+}
+
+.output_feedback {
+    font-style: italic;
+    background-color: rgb(222, 227, 225);
+    margin: 0;
+    padding: 15px;
+}
+
+.output_avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-row: span 2;
+}
+
+.feedback_field {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 100px 400px;
+    grid-template-rows: 50px 50px;
+    /* Автоматическое размещение в колонку */
+    grid-auto-flow: column;
+    column-gap: 25px;
+    margin-bottom: 10px;
+    border: 2px rgb(222, 227, 225) dotted;
+    padding: 20px;
+}
