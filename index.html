@@ -14,6 +14,9 @@
         <section class="leave_feedback">
             <h2>Добавить отзыв</h2>
             <div class="user_info">
+                <label for="show_name">Указывать имя?</label>
+                <input type="radio" name="show_name" value="yes" id="yes">Да</input>
+                <input type="radio" name="show_name" value="no" id="no">Нет</input><br><br>
                 <label for="input_name">Никнейм</label>
                 <input type="text" id="input_name" placeholder="Введите никнейм" title="Придумайте никнейм"><br><br>
 
@@ -25,11 +28,19 @@
             <textarea id="input_feedback" cols="59" rows="7" placeholder="Оставьте свой отзыв"></textarea>
 
             <button type="submit" id="add_feedback">Оставить отзыв</button>
+            <p class="wrong"></p>
         </section>
 
         <section class="feedbacks">
             <h2>Отзывы</h2>
             <div id="output-list">
+                <div class="feedback_field">
+                    <img width="100" height="200" class="output_avatar"
+                        src="https://i.pinimg.com/originals/86/c3/d1/86c3d151b552aec43fe0eed4f51f9db7.jpg">
+                    <p class="output_name">Мурзик</p>
+                    <p class="output_feedback">Первый коммент!</p>
+                    <p class="output_date">01.10.2023, 14:21:03</p>
+                </div>
             </div>
         </section>
     </main>

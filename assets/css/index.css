@@ -40,6 +40,7 @@
     background-color: rgb(222, 227, 225);
     margin: 0;
     padding: 15px;
+    grid-column: span 2
 }
 
 .output_avatar {
@@ -52,7 +53,7 @@
 .feedback_field {
     height: 100px;
     display: grid;
-    grid-template-columns: 100px 400px;
+    grid-template-columns: 100px 400px 150px;
     grid-template-rows: 50px 50px;
     /* Автоматическое размещение в колонку */
     grid-auto-flow: column;
@@ -60,4 +61,9 @@
     margin-bottom: 10px;
     border: 2px rgb(222, 227, 225) dotted;
     padding: 20px;
+}
+
+.output_date {
+    color: rgb(153, 153, 159);
+    font-style: italic;
 }
