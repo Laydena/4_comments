@@ -8,7 +8,20 @@ const outputFeedback = document.querySelector(".output_feedback");
 
 const inputLink = document.getElementById("input_link");
 
+const radioInput = document.getElementsByName("show_name");
+
 const addButton = document.getElementById("add_feedback");
+
+const addButton = document.getElementById("add_feedback");
+
+//Массив с рандомными картинками
+let randomPictures = [
+    "/assets/avatar1.jpg",
+    "/assets/avatar2.jpg",
+    "/assets/avatar3.jpg",
+    "/assets/avatar4.jpg"
+]
+
 
 //приводим имя к нужному формату
 function formatName(name) {
@@ -24,6 +37,13 @@ function checkSpam(feedback) {
         .replace(/XXX/gi, "***");
 }
 
+//Выбор рандомной картинки из массива
+function getRandomAvatar() {
+    const randomIndex = Math.floor(Math.random() * randomPictures.length);
+    return randomPictures[randomIndex];
+}
+
+
 function makeFeedback() {
     //Создаю div-контейнер для отзыва
     const newField = document.createElement("div");
@@ -31,31 +51,41 @@ function makeFeedback() {
     feedbackList.append(newField);
 
     //Создаю возможность добавления картинки
-    const urlValue = inputLink.value;
+    const urlValue = inputLink.value || getRandomAvatar();
     const newAvatar = new Image(100, 200);
     newAvatar.classList.add("output_avatar");
     newAvatar.src = urlValue;
     newField.append(newAvatar);
     inputLink.value = "";
 
+    const showName = radioInput[0].checked;
+
+
 
     //Создаю возможность добавления имени пользователя
-    const nameValue = inputName.value;
-    let formattedName = formatName(nameValue);
+    const nameValue = inputName.value ? formatName(inputName.value) : "Username";
     const newUsername = document.createElement("p");
     newUsername.classList.add("output_name");
-    newUsername.textContent = formattedName;
+    newUsername.textContent = showName ? nameValue : "Username";
     newField.append(newUsername);
     inputName.value = "";
 
+
+    // const nameValue = inputName.value ? formatName(inputName.value) : "Username";
+    // const newUsername = document.createElement("p");
+    // newUsername.classList.add("output_name");
+    // newUsername.textContent = nameValue;
+    // newField.append(newUsername);
+    // inputName.value = "";
+
     //Создаю возможность добавления комментария
-    const feedbackValue = inputFeedback.value;
-    let censFeedback = checkSpam(feedbackValue)
+    const feedbackValue = inputFeedback.value ? checkSpam(inputFeedback.value) : "Сообщение не введено";
     const newFeedback = document.createElement("p");
     newFeedback.classList.add("output_feedback");
-    newFeedback.textContent = censFeedback;
+    newFeedback.textContent = feedbackValue;
     newField.append(newFeedback);
     inputFeedback.value = "";
+
 
     //чекаем время
     const data = new Date();
